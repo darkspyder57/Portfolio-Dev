@@ -33,6 +33,9 @@ export const metadata: Metadata = {
       "Premium AI engineering blending intelligent automation with high-end interfaces.",
     type: "website",
   },
+  icons: {
+    icon: "/assets/mmk-futuristic-logo.png?v=2",
+  },
 };
 
 export default function RootLayout({
@@ -47,6 +50,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="icon" href="/assets/mmk-futuristic-logo.png?v=2" />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
