@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>M. Mohnish Kumar - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-dim": "#121317",
+                "outline": "#859398",
+                "on-background": "#e3e2e8",
+                "aurora-blue": "#00D4FF",
+                "secondary-fixed-dim": "#c4c0ff",
+                "error-container": "#93000a",
+                "background": "#121317",
+                "on-surface-variant": "#bbc9cf",
+                "on-primary-fixed-variant": "#004e5f",
+                "error": "#ffb4ab",
+                "tertiary-fixed-dim": "#c3c0ff",
+                "glass-border": "rgba(255, 255, 255, 0.08)",
+                "on-secondary-fixed-variant": "#392bbc",
+                "surface-container": "#1f1f24",
+                "secondary-container": "#3b2ebf",
+                "on-tertiary-fixed-variant": "#321ed2",
+                "on-primary-fixed": "#001f27",
+                "tertiary-container": "#bfbcff",
+                "tertiary": "#dedbff",
+                "secondary": "#c4c0ff",
+                "primary-container": "#00d4ff",
+                "surface-container-highest": "#343439",
+                "on-tertiary-container": "#3d2eda",
+                "surface": "#121317",
+                "primary-fixed-dim": "#3cd7ff",
+                "on-tertiary": "#1d00a5",
+                "aurora-cyan": "#00FFC2",
+                "tertiary-fixed": "#e2dfff",
+                "aurora-violet": "#7A73FF",
+                "on-tertiary-fixed": "#0f0069",
+                "surface-tint": "#3cd7ff",
+                "outline-variant": "#3c494e",
+                "inverse-primary": "#00677e",
+                "on-surface": "#e3e2e8",
+                "surface-container-low": "#1a1b20",
+                "surface-container-high": "#292a2e",
+                "inverse-on-surface": "#2f3035",
+                "on-primary": "#003642",
+                "on-secondary-container": "#b4b0ff",
+                "on-secondary-fixed": "#110069",
+                "on-primary-container": "#00586b",
+                "surface-container-lowest": "#0d0e12",
+                "on-error-container": "#ffdad6",
+                "surface-variant": "#343439",
+                "on-secondary": "#2000a4",
+                "surface-bright": "#38393e",
+                "secondary-fixed": "#e3dfff",
+                "inverse-surface": "#e3e2e8",
+                "primary-fixed": "#b4ebff",
+                "primary": "#a8e8ff",
+                "glass-surface": "rgba(255, 255, 255, 0.03)",
+                "on-error": "#690005"
+        },
+        "borderRadius": {
+                "DEFAULT": "1rem",
+                "lg": "2rem",
+                "xl": "3rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1200px",
+                "gutter": "24px",
+                "margin-desktop": "60px",
+                "stack-gap": "128px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Geist"
+                ],
+                "body-md": [
+                        "Geist"
+                ],
+                "body-lg": [
+                        "Geist"
+                ],
+                "label-mono": [
+                        "JetBrains Mono"
+                ],
+                "headline-lg-mobile": [
+                        "Geist"
+                ],
+                "hero-display": [
+                        "Geist"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-mono": [
+                        "12px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "hero-display": [
+                        "120px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: transparent;
+            color: #e3e2e8;
+            overflow-x: hidden;
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .glass-hover:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .magnetic-btn {
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        
+        .glow-dot {
+            box-shadow: 0 0 10px #00FFC2;
+            animation: pulse-glow 2s infinite;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        @keyframes subtle-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(0, 255, 194, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 255, 194, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 255, 194, 0); }
+        }
+        
+        .animate-subtle-pulse {
+            animation: subtle-pulse 3s infinite ease-in-out;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00D4FF, #7A73FF);
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .mouse-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+
+        .glass-panel:hover .mouse-glow {
+            opacity: 1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md text-body-md selection:bg-aurora-blue selection:text-surface">
+<div class="progress-bar" id="progressBar"></div>
+<!-- Background WebGL Shader -->
+<!-- STITCH_SHADER_START:ANIMATION_30 class="fixed inset-0 w-full h-full -z-10" -->
+<div class="fixed inset-0 w-full h-full -z-10" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_30" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_30');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+varying vec2 v_texCoord;
+
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = (uv - 0.5) * 2.0;
+    p.x *= u_resolution.x / u_resolution.y;
+    
+    vec3 color = vec3(0.04, 0.05, 0.08); // Deep Space Base
+    
+    // Neural Swarm / Agent Activity
+    for(float i = 0.0; i < 40.0; i++) {
+        float h = hash(vec3(i, i * 1.3, i * 0.7).xy);
+        float t = u_time * (0.2 + h * 0.5);
+        
+        // Agent positions - floating & swarming
+        vec2 pos = vec2(
+            sin(t + h * 6.28) * 1.5,
+            cos(t * 0.8 + h * 6.28) * 1.0
+        );
+        
+        // Pulse intensity
+        float dist = length(p - pos);
+        float pulse = 0.5 + 0.5 * sin(u_time * 2.0 + h * 10.0);
+        float glow = 0.002 / (dist * dist + 0.001);
+        
+        // AI/Automation Palette
+        vec3 agentColor = mix(vec3(0.0, 0.83, 1.0), vec3(0.48, 0.45, 1.0), h); // Cyan to Violet
+        color += agentColor * glow * pulse * 0.4;
+        
+        // Subtle data connections (lines)
+        if(i < 15.0) {
+            float lineH = hash(vec2(i, 42.0));
+            vec2 nextPos = vec2(
+                sin(t * 1.1 + lineH * 6.28) * 1.5,
+                cos(t * 0.9 + lineH * 6.28) * 1.0
+            );
+            float lineDist = length(p - mix(pos, nextPos, fract(u_time * 0.1)));
+            color += agentColor * (0.0005 / (lineDist + 0.01)) * 0.2;
+        }
+    }
+    
+    // Vignette
+    color *= 1.0 - length(uv - 0.5) * 0.5;
+    
+    gl_FragColor = vec4(color, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_30 -->
+<!-- Navigation (TopAppBar) -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl rounded-full border border-glass-border bg-glass-surface/50 backdrop-blur-3xl shadow-[0_30px_60px_rgba(0,0,0,0.5)] z-40">
+<nav class="flex justify-between items-center px-8 py-4">
+<a class="flex items-center gap-3 scale-95 active:scale-90 transition-transform" href="#">
+<img alt="M Mohnish Kumar Logo" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida/AP1WRLsQr4ckxuExLuueS97w-3G0zf0wdHkRJEXfmQCVuAu2IMdGFudY77UZ2v9zJMFzWjq81ZBFkGdty1hThWYMCHBduWrq-GbDo-U7_sBxv_SKd4K2OCYpcKrVMZKDfhmN1lT4NNcgTKKlPj8O4rE6c3Kj07LkjA9UYWUpQpMAqj4mNZO1u8aRzAVy-aLFhDfMXfLJijYm7BTUdyZM8agh2nUl7hQwvVc370netCWTLrci46Bs2cddcJNSlFw"/>
+<span class="font-headline-lg text-lg font-bold tracking-tighter text-on-surface">M. Mohnish Kumar</span>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 text-sm font-medium tracking-wide" href="#experience">Experience</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 text-sm font-medium tracking-wide" href="#projects">Work</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 text-sm font-medium tracking-wide" href="#stack">Architecture</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 text-sm font-medium tracking-wide" href="#contact">Contact</a>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-md bg-surface/50 border border-glass-border text-on-surface-variant font-label-mono text-[10px]">
+<span>⌘</span><span>K</span>
+</div>
+<a class="flex items-center justify-center px-6 py-2.5 rounded-full bg-on-surface text-surface font-bold hover:bg-white/90 transition-all duration-300 scale-95 active:scale-90 magnetic-btn text-sm" href="#">
+                    Download CV
+                </a>
+</div>
+<!-- Mobile Menu Toggle (Visual only for now) -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="relative z-10 flex flex-col pt-40 pb-32 space-y-40">
+<!-- Hero Section -->
+<section class="min-h-[90vh] flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop relative">
+<div class="glass-panel inline-flex items-center gap-3 px-5 py-2.5 rounded-full mb-12 shadow-2xl reveal">
+<div class="w-2.5 h-2.5 rounded-full bg-[#00FFC2] glow-dot"></div>
+<span class="font-label-mono text-xs text-[#00FFC2] uppercase tracking-widest font-bold">Available for Q4 Collaborations</span>
+</div>
+<h1 class="font-hero-display text-[60px] md:text-[100px] text-on-surface mb-8 max-w-6xl mx-auto leading-[1.0] tracking-[-0.04em] text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 reveal">
+                Architecting the Autonomous Future.
+            </h1>
+<p class="font-body-lg text-xl md:text-2xl text-on-surface-variant max-w-3xl mx-auto mb-16 leading-relaxed font-light reveal">
+                Premium AI engineering blending intelligent automation with high-end interfaces. Crafting autonomous workflows and digital products that are scalable, tactile, and inevitable.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 z-10 mb-20 reveal">
+<a class="magnetic-btn px-10 py-5 rounded-full bg-aurora-blue text-surface font-bold hover:bg-surface-tint transition-all shadow-[0_0_40px_rgba(0,212,255,0.3)] hover:shadow-[0_0_60px_rgba(0,212,255,0.5)] text-lg" href="#projects">
+                    Explore Architecture
+                </a>
+<a class="magnetic-btn px-10 py-5 rounded-full glass-panel hover:border-aurora-blue transition-colors text-on-surface text-lg" href="#contact">
+                    Initiate Contact
+                </a>
+</div>
+<div class="w-full max-w-4xl mx-auto reveal">
+<div class="glass-panel p-2 rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.4),0_0_40px_rgba(0,212,255,0.15)] group relative">
+<div class="absolute inset-0 bg-gradient-to-br from-aurora-cyan/10 to-aurora-violet/10 opacity-50 z-10 pointer-events-none group-hover:opacity-100 transition-opacity duration-700"></div>
+<img alt="AI Architect Workspace" class="w-full h-auto object-cover rounded-[1.5rem] relative z-0 transform group-hover:scale-[1.02] transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU60DWcbAnM5Cnw1cMPVxQqNtqf4h7DXxfpu0ypribMGRvdR24ScHsNUZ6XMhF1QiuhGdBhv6oQ0o7rU-4HGXmDP9oFKdRMXVfiq5vrOMgJIpgwq5A_z8bhL9QZhtxNG4_ma4jRcbMk5pgp0KFQcVRRdnLwvONh_f2Py495GSRh6iFNHAF0DOJa8xiFFCpY2K34lIqGlqnaC53T6uP6JuJuoZQ6ceDoTo1fgrbh8sABNFwK75n5RD3"/>
+</div>
+</div>
+</section>
+<!-- Split About Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full reveal" id="about">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+<div class="glass-panel p-10 md:p-16 rounded-3xl glass-hover relative overflow-hidden group">
+<div class="mouse-glow"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-aurora-blue mb-4 block">architecture</span>
+<h3 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-4">Engineering Mindset</h3>
+</div>
+<p class="font-body-lg text-on-surface-variant leading-relaxed text-lg mb-8">
+                        Building robust, scalable architectures that form the backbone of high-performance applications. I approach code with a focus on maintainability, performance optimization, and elegant solutions to complex systemic challenges.
+                    </p>
+<ul class="space-y-4 font-label-mono text-sm text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="text-aurora-blue">→</span> System Design &amp; Architecture</li>
+<li class="flex items-center gap-3"><span class="text-aurora-blue">→</span> Performance Optimization</li>
+<li class="flex items-center gap-3"><span class="text-aurora-blue">→</span> Scalable Infrastructure</li>
+</ul>
+</div>
+<div class="glass-panel p-10 md:p-16 rounded-3xl glass-hover relative overflow-hidden group mt-12 md:mt-24">
+<div class="mouse-glow"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-aurora-violet mb-4 block">visibility</span>
+<h3 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-4">Product Thinking</h3>
+</div>
+<p class="font-body-lg text-on-surface-variant leading-relaxed text-lg mb-8">
+                        Beyond the code, I design digital experiences that feel intuitive and luxurious. Translating complex technical capabilities into seamless, highly-polished user interfaces that drive engagement and delight.
+                    </p>
+<ul class="space-y-4 font-label-mono text-sm text-on-surface-variant">
+<li class="flex items-center gap-3"><span class="text-aurora-violet">→</span> High-Fidelity UI/UX</li>
+<li class="flex items-center gap-3"><span class="text-aurora-violet">→</span> AI-Driven Experiences</li>
+<li class="flex items-center gap-3"><span class="text-aurora-violet">→</span> Micro-Interactions</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Interactive Timeline -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto w-full reveal" id="experience">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-5xl md:text-6xl text-on-surface mb-6 tracking-tight">Professional Trajectory</h2>
+<p class="font-body-lg text-on-surface-variant text-xl max-w-2xl mx-auto">A proven track record of delivering high-impact solutions across complex domains.</p>
+</div>
+<div class="relative border-l border-glass-border ml-4 md:ml-8 space-y-16 py-8">
+<!-- Timeline Item 1 -->
+<div class="relative pl-8 md:pl-16 reveal">
+<div class="absolute w-4 h-4 rounded-full bg-aurora-cyan left-[-8.5px] top-8 shadow-[0_0_15px_rgba(0,255,194,0.5)]"></div>
+<div class="glass-panel p-8 md:p-10 rounded-2xl glass-hover relative overflow-hidden">
+<div class="mouse-glow"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+<div>
+<h3 class="font-headline-lg text-2xl text-on-surface">Senior Frontend Architect</h3>
+<p class="font-label-mono text-aurora-cyan mt-2 tracking-widest">CURRENT ROLE</p>
+</div>
+<span class="font-label-mono text-on-surface-variant px-4 py-2 bg-surface/50 rounded-full border border-glass-border">2023 - Present</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 text-lg leading-relaxed">Leading the architectural vision and development of next-generation AI platforms. Establishing high-performance standards, mentoring teams, and implementing luxurious frontend architectures.</p>
+<div class="flex flex-wrap gap-3">
+<span class="font-label-mono text-xs px-3 py-1.5 bg-surface-container/50 backdrop-blur-md rounded-md text-on-surface border border-glass-border">System Design</span>
+<span class="font-label-mono text-xs px-3 py-1.5 bg-surface-container/50 backdrop-blur-md rounded-md text-on-surface border border-glass-border">AI Integration</span>
+<span class="font-label-mono text-xs px-3 py-1.5 bg-surface-container/50 backdrop-blur-md rounded-md text-on-surface border border-glass-border">Team Leadership</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative pl-8 md:pl-16 reveal">
+<div class="absolute w-4 h-4 rounded-full bg-aurora-violet left-[-8.5px] top-8 border-2 border-surface"></div>
+<div class="glass-panel p-8 md:p-10 rounded-2xl glass-hover relative overflow-hidden">
+<div class="mouse-glow"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
+<div>
+<h3 class="font-headline-lg text-2xl text-on-surface">Full-Stack Developer</h3>
+<p class="font-label-mono text-aurora-violet mt-2 tracking-widest">PREVIOUS ROLE</p>
+</div>
+<span class="font-label-mono text-on-surface-variant px-4 py-2 bg-surface/50 rounded-full border border-glass-border">2021 - 2023</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-6 text-lg leading-relaxed">Engineered scalable web applications from ground up. Integrated complex third-party APIs, optimized database queries, and delivered polished, responsive user interfaces.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mastered Architecture / Tech Stack Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full reveal" id="stack">
+<div class="text-center mb-20">
+<h2 class="font-headline-lg text-5xl md:text-6xl text-on-surface mb-6 tracking-tight">Core Stack</h2>
+<p class="font-body-lg text-on-surface-variant text-xl max-w-2xl mx-auto">The tools and frameworks utilized to architect scalable, high-performance systems.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<!-- Left Side -->
+<div class="md:col-span-5 flex flex-col space-y-6">
+<div class="glass-panel p-8 rounded-2xl flex flex-col glass-hover relative overflow-hidden group">
+<div class="mouse-glow"></div>
+<h4 class="font-label-mono text-aurora-cyan mb-3 tracking-widest">FRONTEND ARCHITECTURE</h4>
+<p class="font-body-lg text-on-surface-variant">React, Next.js, Three.js, WebGL, Tailwind CSS, Framer Motion</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl flex flex-col glass-hover relative overflow-hidden group">
+<div class="mouse-glow"></div>
+<h4 class="font-label-mono text-aurora-violet mb-3 tracking-widest">BACKEND INFRASTRUCTURE</h4>
+<p class="font-body-lg text-on-surface-variant">Node.js, Python, PostgreSQL, Redis, GraphQL</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl flex flex-col glass-hover relative overflow-hidden group">
+<div class="mouse-glow"></div>
+<h4 class="font-label-mono text-primary mb-3 tracking-widest">AI &amp; MACHINE LEARNING</h4>
+<p class="font-body-lg text-on-surface-variant">OpenAI Integration, LangChain, TensorFlow, Vector Databases</p>
+</div>
+<div class="glass-panel p-8 rounded-2xl flex flex-col glass-hover relative overflow-hidden group">
+<div class="mouse-glow"></div>
+<h4 class="font-label-mono text-tertiary mb-3 tracking-widest">DEVOPS &amp; CLOUD</h4>
+<p class="font-body-lg text-on-surface-variant">Docker, Kubernetes, AWS, Vercel, CI/CD Pipelines</p>
+</div>
+</div>
+<!-- Right Side -->
+<div class="md:col-span-7 relative h-[600px] w-full tech-stack-3d-container glass-panel rounded-3xl overflow-hidden glass-hover shadow-2xl border border-glass-border">
+<div class="absolute inset-0 bg-gradient-to-br from-aurora-blue/5 to-aurora-violet/5"></div>
+<!-- Floating legends -->
+<div class="absolute top-20 left-12 animate-subtle-pulse bg-surface/80 backdrop-blur-xl px-6 py-3 rounded-full border border-glass-border font-label-mono text-sm text-aurora-cyan z-10 shadow-lg">React Ecosystem</div>
+<div class="absolute bottom-32 left-1/4 animate-subtle-pulse bg-surface/80 backdrop-blur-xl px-6 py-3 rounded-full border border-glass-border font-label-mono text-sm text-aurora-violet z-10 shadow-lg" style="animation-delay: 1s;">Cloud Infrastructure</div>
+<div class="absolute top-1/3 right-12 animate-subtle-pulse bg-surface/80 backdrop-blur-xl px-6 py-3 rounded-full border border-glass-border font-label-mono text-sm text-primary z-10 shadow-lg" style="animation-delay: 2s;">AI Models</div>
+<div class="absolute bottom-20 right-24 animate-subtle-pulse bg-surface/80 backdrop-blur-xl px-6 py-3 rounded-full border border-glass-border font-label-mono text-sm text-tertiary z-10 shadow-lg" style="animation-delay: 1.5s;">Data Pipelines</div>
+</div>
+</div>
+</section>
+<!-- Project Showcase -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full reveal" id="projects">
+<div class="text-center mb-24">
+<h2 class="font-headline-lg text-5xl md:text-6xl text-on-surface mb-6 tracking-tight">Selected Works</h2>
+<p class="font-body-lg text-on-surface-variant text-xl max-w-2xl mx-auto">High-fidelity digital products engineered for scale and impact.</p>
+</div>
+<div class="space-y-12">
+<!-- Medigem AI (Feature) -->
+<div class="glass-panel rounded-[2.5rem] overflow-hidden group relative p-4 md:p-8 border border-glass-border shadow-2xl reveal">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
+<div class="order-2 lg:order-1 p-6 lg:p-12">
+<div class="flex gap-3 mb-8">
+<span class="font-label-mono text-xs px-4 py-2 bg-aurora-blue/10 rounded-full text-aurora-blue border border-aurora-blue/20">Healthcare App</span>
+<span class="font-label-mono text-xs px-4 py-2 bg-aurora-violet/10 rounded-full text-aurora-violet border border-aurora-violet/20">AI Architecture</span>
+</div>
+<h3 class="font-headline-lg text-4xl md:text-5xl text-on-surface mb-6 tracking-tight">Medigem AI</h3>
+<p class="font-body-lg text-on-surface-variant text-lg md:text-xl leading-relaxed mb-10">An intelligent healthcare platform leveraging machine learning to provide diagnostic support. Architected with a focus on real-time data processing, stringent security protocols, and a friction-free practitioner experience.</p>
+<a class="inline-flex items-center gap-3 font-label-mono text-sm uppercase tracking-widest text-on-surface hover:text-aurora-blue transition-colors group/link" href="#">
+                                View Case Study 
+                                <span class="material-symbols-outlined transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform">arrow_outward</span>
+</a>
+</div>
+<div class="order-1 lg:order-2 h-[400px] lg:h-[600px] rounded-2xl overflow-hidden relative">
+<img alt="Medigem AI Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLsS6horTy66epld4oQJ0BIlgkSbrdH2cEObusdrBNQ9d28CgSLV_7qZT0E_tdjMucVG8vvU5SaZPdqXq-79uqLOQJJaFuBuohq4U8aRjoXu-uyqrgaRN83V_bzbTtMbuBlIMvkG97nxje5jr756vOSc4Al9hKlbr90IRbWu2qQAs19c2G0uXhjodxL_KXUDLuSmgvkNYZqIEvW6tlyRc0VIlWFNNrYfsuycRovaN5Mu4xijVQHjnUUIhbg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Courseware Web App -->
+<div class="glass-panel rounded-[2.5rem] overflow-hidden group relative p-4 md:p-8 border border-glass-border shadow-2xl reveal">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center h-full">
+<div class="order-2 lg:order-1 p-6 lg:p-12">
+<div class="flex gap-3 mb-8">
+<span class="font-label-mono text-xs px-4 py-2 bg-aurora-blue/10 rounded-full text-aurora-blue border border-aurora-blue/20">Educational Platform</span>
+<span class="font-label-mono text-xs px-4 py-2 bg-aurora-cyan/10 rounded-full text-aurora-cyan border border-aurora-cyan/20">Centurion University</span>
+</div>
+<h3 class="font-headline-lg text-4xl md:text-5xl text-on-surface mb-6 tracking-tight">Courseware Web App</h3>
+<p class="font-body-lg text-on-surface-variant text-lg md:text-xl leading-relaxed mb-10">An educational platform designed for Centurion University, facilitating seamless access to course materials, academic schema, and institutional resources.</p>
+<a class="inline-flex items-center gap-3 font-label-mono text-sm uppercase tracking-widest text-on-surface hover:text-aurora-blue transition-colors group/link" href="#">
+                                View Case Study 
+                                <span class="material-symbols-outlined transform group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform">arrow_outward</span>
+</a>
+</div>
+<div class="order-1 lg:order-2 h-[400px] lg:h-[600px] rounded-2xl overflow-hidden relative">
+<img alt="Courseware Web App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLs9Zlu4rCfKT9f_udaO4tSspSE0mAS9P5TSgy0WBlGxuJfmMj4N3TCSdCKSG5HXuiliSp4R0q9kqjI_8WNp1x2sjxgh5TXZuaccuKAeYe3xcyW8ZpcbmUcwllXfh7GoR4zgG7iZ5aCzgihqSfcBoQvoe9SElNjnH0LnnKN_QwKRisdpZfz0IUBJ_9eLjUxiXKMkdcsYdp8CcusaaApJ5GvYnaCBpdQeWYUWq0ciDXPtaDjlKFF_ZqxODA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+<!-- Grid Projects -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- TechKart -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="TechKart E-commerce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvCmu3RzqQWIOXZK90AS013kB0oTUTvcL5dXpTm7lH73ohbHH3-T1nwWH5qyQFoyBwIaWJWW2PnhEquRFwmSlQJE1V1ywNp82h-Za3abechkuVSvitkfcNF6wskLryq7NpqrCYaeSz-FCSb9VP2lQeU8lAHd7DBIr11E6t-OODP44QIlxpxQ6bw8Pmt5MniGLdQFrlKzA_wkOz4b-8xyNppIWo6fk06TgvBzsY3gOqV98n6X5yQxTjK4t4"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">TechKart</h3>
+<p class="font-body-md text-on-surface-variant">High-performance e-commerce architecture optimized for conversion and speed.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-cyan">Next.js / Stripe</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- My Clinic Copilot -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="My Clinic Copilot Interface" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A clean, modern medical dashboard interface showing patient metrics, appointments, and AI-driven insights in a dark mode aesthetic with subtle blue accents." src="https://lh3.googleusercontent.com/aida/AP1WRLsDzDz11UHPj8BNUSZoscIq9vsSm2my6dUi-PmjrsPK9SZrKiwSU49bdBB02ZCt2eTcy1MXdrXyUL6hHmtNcs2ztiMfApvtG-7yVM6Stvq9ZA7qaU4BZpHn1sLBFSt99yRIynxUIYxU9jFsHSgFpEiF3Uuh3O1wTigrXYjubogb3cfICp6HeUSFx6YKUg0Xc5Y5LDJMhNzcPoSNjWjx4SaqocBL3ktEu0jsTF8nZRdOg9DIKJd6VtweYfI"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">My Clinic Copilot</h3>
+<p class="font-body-md text-on-surface-variant">Comprehensive practice management dashboard with predictive analytics.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-violet">React / Python API</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Organ Donor System -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="Organ Donor System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLsaytwt2DGdMuNFYN3kYFmLkgRo8P3RkaLi7hrcdB3xCv5ihr3srPZmANcmgE-eCruPVYZzSX-rzVvwPM-QeniyaHoKcTz3vhyUKGoKRNVhlW6RO1ONMxuwXWVxK_-DijU613CCEL_oxnnjNgmaVGvxwBuXMwLlzkWx_gnQ0mVWwKRhJXqzUCjsj4L7h16YRAqOkjQvjyPasDZYkaP3ef2yooU6uZIW6RmjEZ9Rg1FzX65LWC9xkMxKf2c"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">Organ Donor System</h3>
+<p class="font-body-md text-on-surface-variant">Data analysis and storage for organ donors.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-cyan">Data Analysis / Storage</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Note Keeper Application -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="Note Keeper Application" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLt3xkQ0E2rYBWR5oIXSnjfKfGKv14Jxscnr6HTtLW9I_FYEf4hIQQqymJtHDCY_ZS3k4SPXPV1w3aMLEGvToJ8Ym7MbZl45dEjVKyEo4Kj2Mt9QtNOaf7_-OaVRxD_y3UtCEwP99_OtXQiKeRESOZ5KPAP2ckEZHX5END3PUB6CWu4RY8YYDb7TMZau31ZVSbEWfguofO8xwTCgJpd5ilC-wZXSNZpTotcX6vnUlzxO0idAobCoG8BZ5WY"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">Note Keeper Application</h3>
+<p class="font-body-md text-on-surface-variant">Aesthetic Google Keep-inspired app.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-violet">Frontend</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Amazon.in Clone -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="Amazon.in Clone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtTo9xeiK9MGOSZqRE6uMVnGKLb4_lcDX5KrKPn6ghUxao_wXY9BtK61Qp6g6CMGNZL9DsZHoqh_PPg6fVHIuMPygVJ7jflOIK7w8sTCxQI3AwBcK4L9fPx999YEjIeFy7UgCv1bKyOBdhhAB8P11IIoFOJAwaBVCmBV8uwjDQNlggymhS3-A5HxLwP498GWD_S7RVAZqWg0lxVnKtbN9TYHmtS1bRaIEUtTOrQfWkLRvi5C1c8BqcuKkY"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">Amazon.in Clone</h3>
+<p class="font-body-md text-on-surface-variant">Frontend practice project.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-cyan">Frontend</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Yom! Food Delivery -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="Yom! Food Delivery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLvkek72ptSiEuDpO-7MACc3E7ol6t1zR0vZaERzJ24ModMWVHi6jhuHZnIQObBIVUlm4qx1i4J8lHlN4QGBzpsx-Ee17uP7pjfx9bFvrjSLtQhDoFlXCiw0g1QhyJKwZsd3Si0Ax3Sjk5-0O2V82U_apzYfVS0bfnJPbVwk5iLF7M0FrGSYmMU6oPKvMeuw9Oa_rwRCS9GMkqOfNau_nnEsa1ZsKLtVEMA3Ags11G8Kys-cSsP2ZuuCmJk"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">Yom! Food Delivery</h3>
+<p class="font-body-md text-on-surface-variant">Order online, book tables, and list restaurants.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-violet">Full-Stack</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Texpert -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="Texpert" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtssvcdzV6jb-adnXdx1LW-V80eT66TAMJUZ740twQuCOO7zACGnBmksNUsdPTq1BO493pWyFDE_743-6g-NLgp3ghxTixoaRLe91--ED0LoZ_fikEp8w41ALzUgC6qKIQIKXY6XJUMgMTdzjV1aJUDzYK18DbGvcGQgCLnnCSCaPOKv62RPM_jbJFQo9SufR3-gey2Ri6L9Sz0vQPmXRmLV5jc9rAYJ3CbN2h44Izj9K02qSJspfPQXPY"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">Texpert</h3>
+<p class="font-body-md text-on-surface-variant">Learning platform for programmers.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-cyan">Education Tech</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- React-Prompt-Generator NPM Package -->
+<div class="glass-panel rounded-3xl overflow-hidden group relative glass-hover flex flex-col h-[600px] reveal">
+<div class="h-2/3 overflow-hidden">
+<img alt="React-Prompt-Generator NPM Package" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLtTMLBFLalQp5mZh5_DDHBx4HPhSk6qGcceWb2xBQ0OGPom6pYTxST3rz3uzeIotTW3rGImJKHB5qkJ6iCfKlpRFItVwn2zYFPR-rcynzGyim5eUE-YAe9S-PRkVj0Yd8rmDMlHt_gt3eSzNVXnQNDd_Qa3aucaN0OQ8Q4zMb2DYfYaTXS_V9yIFyTjkWo_8NZgW-UfYCi4t3meTQznfOwbXmQBKq6pj0bWaGw8ohuSuJnjXUtcQJ0-dCY"/>
+</div>
+<div class="p-8 h-1/3 flex flex-col justify-between bg-gradient-to-t from-surface/90 to-surface/50 backdrop-blur-md">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-2">React-Prompt-Generator NPM Package</h3>
+<p class="font-body-md text-on-surface-variant">NPM package for prompt analysis.</p>
+</div>
+<div class="flex justify-between items-center mt-4">
+<span class="font-label-mono text-xs text-aurora-violet">NPM Package</span>
+<span class="material-symbols-outlined text-on-surface">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full reveal" id="contact">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-5xl md:text-6xl text-on-surface mb-6 tracking-tight">Initiate Collaboration</h2>
+<p class="font-body-lg text-on-surface-variant text-xl max-w-2xl mx-auto">Let's architect something extraordinary together.</p>
+</div>
+<div class="glass-panel p-8 md:p-16 rounded-[2.5rem] glass-hover relative overflow-hidden group border border-glass-border shadow-2xl">
+<div class="mouse-glow"></div>
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-24">
+<!-- Sidebar Info -->
+<div class="lg:col-span-2 flex flex-col justify-between z-10">
+<div>
+<h3 class="font-headline-lg text-3xl text-on-surface mb-6">Connect</h3>
+<p class="font-body-md text-on-surface-variant text-lg mb-8 leading-relaxed">
+                        Currently exploring new opportunities and collaborations. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                    </p>
+<a class="inline-flex items-center gap-4 text-on-surface hover:text-aurora-cyan transition-colors group/email mb-12" href="mailto:mohnishkumar57@gmail.com">
+<span class="material-symbols-outlined text-aurora-cyan p-3 bg-aurora-cyan/10 rounded-full group-hover/email:bg-aurora-cyan/20 transition-colors">mail</span>
+<span class="font-label-mono text-sm tracking-wide">mohnishkumar57@gmail.com</span>
+</a>
+</div>
+<div>
+<h4 class="font-label-mono text-xs text-on-surface-variant uppercase tracking-widest mb-6">Digital Presence</h4>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:border-aurora-violet hover:shadow-[0_0_20px_rgba(122,115,255,0.3)] transition-all text-on-surface hover:text-aurora-violet" href="#">
+<span class="material-symbols-outlined">code</span>
+</a>
+<a class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:border-aurora-blue hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all text-on-surface hover:text-aurora-blue" href="#">
+<span class="material-symbols-outlined">work</span>
+</a>
+<a class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:border-aurora-cyan hover:shadow-[0_0_20px_rgba(0,255,194,0.3)] transition-all text-on-surface hover:text-aurora-cyan" href="#">
+<span class="material-symbols-outlined">forum</span>
+</a>
+<a class="w-12 h-12 rounded-full glass-panel flex items-center justify-center hover:border-primary hover:shadow-[0_0_20px_rgba(168,232,255,0.3)] transition-all text-on-surface hover:text-primary" href="#">
+<span class="material-symbols-outlined">photo_camera</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Contact Form -->
+<div class="lg:col-span-3 z-10">
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Name Field -->
+<div class="relative z-0 w-full group">
+<input class="block py-3.5 px-0 w-full font-body-md text-on-surface bg-transparent border-0 border-b-2 border-outline/30 appearance-none focus:outline-none focus:ring-0 focus:border-aurora-blue peer transition-colors" id="name" name="name" placeholder=" " required="" type="text"/>
+<label class="absolute font-body-md text-on-surface-variant duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-aurora-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" for="name">Your Name</label>
+</div>
+<!-- Email Field -->
+<div class="relative z-0 w-full group">
+<input class="block py-3.5 px-0 w-full font-body-md text-on-surface bg-transparent border-0 border-b-2 border-outline/30 appearance-none focus:outline-none focus:ring-0 focus:border-aurora-cyan peer transition-colors" id="email" name="email" placeholder=" " required="" type="email"/>
+<label class="absolute font-body-md text-on-surface-variant duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-aurora-cyan peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" for="email">Email Address</label>
+</div>
+</div>
+<!-- Subject Field -->
+<div class="relative z-0 w-full group">
+<input class="block py-3.5 px-0 w-full font-body-md text-on-surface bg-transparent border-0 border-b-2 border-outline/30 appearance-none focus:outline-none focus:ring-0 focus:border-aurora-violet peer transition-colors" id="subject" name="subject" placeholder=" " required="" type="text"/>
+<label class="absolute font-body-md text-on-surface-variant duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-aurora-violet peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" for="subject">Subject</label>
+</div>
+<!-- Message Field -->
+<div class="relative z-0 w-full group">
+<textarea class="block py-3.5 px-0 w-full font-body-md text-on-surface bg-transparent border-0 border-b-2 border-outline/30 appearance-none focus:outline-none focus:ring-0 focus:border-aurora-blue peer transition-colors resize-none" id="message" name="message" placeholder=" " required="" rows="5"></textarea>
+<label class="absolute font-body-md text-on-surface-variant duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-aurora-blue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6" for="message">Your Message</label>
+</div>
+<button class="magnetic-btn mt-6 inline-flex items-center gap-3 px-10 py-5 rounded-full bg-aurora-blue text-surface font-bold hover:bg-surface-tint transition-all shadow-[0_0_40px_rgba(0,212,255,0.3)] hover:shadow-[0_0_60px_rgba(0,212,255,0.5)] text-lg w-full md:w-auto justify-center" type="submit">
+                        Send Message
+                        <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest/80 backdrop-blur-xl w-full border-t border-glass-border relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center py-16 px-margin-desktop max-w-container-max mx-auto gap-8">
+<span class="font-label-mono text-xs text-on-surface-variant tracking-widest uppercase">
+                © 2024 M Mohnish Kumar. Architected for Scale.
+            </span>
+<div class="flex gap-8">
+<a class="font-label-mono text-sm text-outline hover:text-aurora-cyan transition-colors" href="#">GitHub</a>
+<a class="font-label-mono text-sm text-outline hover:text-aurora-cyan transition-colors" href="#">LinkedIn</a>
+<a class="font-label-mono text-sm text-outline hover:text-aurora-cyan transition-colors" href="#">Twitter</a>
+<a class="font-label-mono text-sm text-outline hover:text-aurora-cyan transition-colors" href="#">Email</a>
+</div>
+</div>
+</footer>
+<!-- Scroll to Top Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 glass-panel rounded-full flex items-center justify-center text-on-surface hover:text-aurora-cyan hover:border-aurora-cyan hover:shadow-[0_0_30px_rgba(0,255,194,0.3)] transition-all duration-300 z-50 opacity-0 pointer-events-none translate-y-4" id="scrollToTopBtn">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+        // Simple Magnetic Button Effect
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0px, 0px)';
+            });
+        });
+
+        // Mouse glow effect for glass panels
+        document.querySelectorAll('.glass-panel').forEach(panel => {
+            panel.addEventListener('mousemove', (e) => {
+                const glow = panel.querySelector('.mouse-glow');
+                if(!glow) return;
+                const rect = panel.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                glow.style.left = `${x}px`;
+                glow.style.top = `${y}px`;
+            });
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+        
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.style.opacity = '1';
+                scrollToTopBtn.style.pointerEvents = 'auto';
+                scrollToTopBtn.style.transform = 'translateY(0)';
+            } else {
+                scrollToTopBtn.style.opacity = '0';
+                scrollToTopBtn.style.pointerEvents = 'none';
+                scrollToTopBtn.style.transform = 'translateY(1rem)';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Reveal Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
